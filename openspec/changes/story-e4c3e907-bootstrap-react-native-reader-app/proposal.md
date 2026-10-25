@@ -3,6 +3,7 @@
 ## Why
 
 The repository has no runnable application yet, so there is no mobile foundation on which to build the reader social network. Establishing a small, verified iOS and Android app now gives future reader-focused work a consistent starting point.
+The home screen title will be "Hello Worldl!!!".
 
 ## What Changes
 
