@@ -16,5 +16,5 @@
 
 ## 4. Contributor Guidance
 
-- [ ] 4.1 Update the README's expected visible result from `Welcome to Readet` to `Hello Egor`; verify the README's install, validation, and launch commands remain unchanged.
+- [x] 4.1 Update the README's expected visible result from `Welcome to Readet` to `Hello Egor`; verify the README's install, validation, and launch commands remain unchanged.
 - [ ] 4.2 Reviewer: From a clean checkout, follow the README through launching the app in Expo Go or an emulator and confirm it bundles without errors and visibly displays `Hello Egor`.

@@ -20,4 +20,4 @@ npm start
 
 After `npm start`, follow the Expo CLI instructions to open the app in Expo Go or an emulator.
 
-The expected visible result is `Welcome to Readet`.
+The expected visible result is `Hello Egor`.
