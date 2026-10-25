@@ -11,8 +11,8 @@
 
 ## 3. Initial Greeting Update
 
-- [ ] 3.1 Replace the initial screen's `Welcome to Readet` text with `Hello Egor`; verify the automated rendering test asserts the exact `Hello Egor` text.
-- [ ] 3.2 Update the application rendering test to cover the `Hello Egor` greeting; verify it is run by `npm test` (do not install dependencies or run commands in the agent sandbox).
+- [x] 3.1 Replace the initial screen's `Welcome to Readet` text with `Hello Egor`; verify the automated rendering test asserts the exact `Hello Egor` text.
+- [x] 3.2 Update the application rendering test to cover the `Hello Egor` greeting; verify it is run by `npm test` (do not install dependencies or run commands in the agent sandbox).
 
 ## 4. Contributor Guidance
 
