@@ -18,3 +18,12 @@
 
 - [x] 4.1 Update the README's expected visible result from `Welcome to Readet` to `Hello Egor!!!!!`; verify the README's install, validation, and launch commands remain unchanged.
 - [ ] 4.2 Reviewer: From a clean checkout, follow the README through launching the app in Expo Go or an emulator and confirm it bundles without errors and visibly displays `Hello Egor!!!!!`.
+
+## 5. Green Home Screen
+
+- [ ] 5.1 Set the initial home screen's visible background to solid green without adding product functionality; verify the existing screen still renders `Hello Egor!!!!!`.
+- [ ] 5.2 Extend the automated screen-rendering test to assert the home screen's green background and `Hello Egor!!!!!` greeting; verify the test is included in `npm test` (do not install dependencies or run commands in the agent sandbox).
+
+## 6. Visual Review
+
+- [ ] 6.1 Reviewer: Launch the app in Expo Go or an emulator and confirm the full initial home screen has a solid green background while `Hello Egor!!!!!` remains visible.

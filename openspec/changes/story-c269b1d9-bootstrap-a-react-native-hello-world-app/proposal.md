@@ -2,12 +2,12 @@
 
 ## Why
 
-The repository now has a runnable application, but its initial visible message must reflect the team's requested greeting. Updating the greeting keeps the first screen and its contributor guidance aligned with the intended experience.
+The initial reader-network screen needs a recognizable visual treatment in addition to its greeting. A green home background establishes that requested appearance while keeping the starter application intentionally small.
 
 ## What Changes
 
-- Replace the initial screen text `Welcome to Readet` with `Hello Egor!!!!!`.
-- Update the automated screen-rendering test and README's expected visible result to use `Hello Egor!!!!!`.
+- Display the initial reader-network home screen on a solid green background.
+- Extend the automated screen-rendering test to cover the green home background.
 
 ## Capabilities
 
@@ -20,8 +20,10 @@ The repository now has a runnable application, but its initial visible message m
 
 ## Impact
 
-Updates the application entry point, its rendering test, and contributor documentation. It changes no APIs, dependencies, backend systems, or stored user data.
+Updates the application entry point and its rendering test. It changes no APIs, dependencies, backend systems, contributor commands, or stored user data.
 
 ## Assumptions
 
-- The initial screen will display the exact text "Hello Egor!!!!!" and will not add any other product functionality.
+- The existing exact greeting "Hello Egor!!!!!" remains on the initial screen.
+- The entire visible home screen uses a solid green background; no particular brand shade was supplied.
+- This visual update will not add product functionality.
