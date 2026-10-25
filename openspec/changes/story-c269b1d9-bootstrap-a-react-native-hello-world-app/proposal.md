@@ -2,13 +2,12 @@
 
 ## Why
 
-The repository has no runnable application, so contributors cannot yet begin building the reader social network. Establishing a small, working mobile entry point gives the project a verified foundation without committing to product features prematurely.
+The repository now has a runnable application, but its initial visible message must reflect the team's requested greeting. Updating the greeting keeps the first screen and its contributor guidance aligned with the intended experience.
 
 ## What Changes
 
-- Add the first runnable React Native application with a single reader-network welcome screen.
-- Add the minimum project metadata, development scripts, and automated screen-rendering test needed to maintain the application.
-- Document prerequisites and exact install, validation, and launch commands for new contributors.
+- Replace the initial screen text `Welcome to Readet` with `Hello Egor`.
+- Update the automated screen-rendering test and README's expected visible result to use `Hello Egor`.
 
 ## Capabilities
 
@@ -21,10 +20,8 @@ The repository has no runnable application, so contributors cannot yet begin bui
 
 ## Impact
 
-Adds the mobile project configuration, application entry point, test configuration and test, dependency metadata, and contributor documentation. This introduces a managed React Native development toolchain and its development dependencies; it exposes no backend APIs and stores no user data.
+Updates the application entry point, its rendering test, and contributor documentation. It changes no APIs, dependencies, backend systems, or stored user data.
 
 ## Assumptions
 
-- The supported initial development workflow will use Expo's managed React Native toolchain with TypeScript, because the empty repository has no competing platform convention and this provides the smallest standard setup for device and simulator development.
-- The initial screen will use the product name "Readet" and display the exact welcome message "Welcome to Readet".
-- The standard development target is an Expo development server opened in Expo Go or a compatible emulator; native release builds are outside this bootstrap change.
+- The initial screen will display the exact text "Hello Egor" and will not add any other product functionality.
