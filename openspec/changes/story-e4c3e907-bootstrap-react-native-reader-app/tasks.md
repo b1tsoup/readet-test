@@ -1,7 +1,7 @@
 ## 1. Bootstrap Application
 
-- [ ] 1.1 Create the minimal Expo-managed React Native TypeScript application, package scripts, and platform configuration; verify the documented start command is defined in `package.json`.
-- [ ] 1.2 Implement the single reader social network welcome screen with no backend, authentication, social functionality, or persisted data; verify with an automated component test that the greeting renders.
+- [x] 1.1 Create the minimal Expo-managed React Native TypeScript application, package scripts, and platform configuration; verify the documented start command is defined in `package.json`.
+- [x] 1.2 Implement the single reader social network welcome screen with no backend, authentication, social functionality, or persisted data; verify with an automated component test that the greeting renders.
 
 ## 2. Developer Experience
 
