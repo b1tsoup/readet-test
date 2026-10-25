@@ -11,10 +11,10 @@
 
 ## 3. Initial Greeting Update
 
-- [x] 3.1 Replace the initial screen's `Welcome to Readet` text with `Hello Egor`; verify the automated rendering test asserts the exact `Hello Egor` text.
-- [x] 3.2 Update the application rendering test to cover the `Hello Egor` greeting; verify it is run by `npm test` (do not install dependencies or run commands in the agent sandbox).
+- [x] 3.1 Replace the initial screen's `Welcome to Readet` text with `Hello Egor!!!!!`; verify the automated rendering test asserts the exact `Hello Egor!!!!!` text.
+- [x] 3.2 Update the application rendering test to cover the `Hello Egor!!!!!` greeting; verify it is run by `npm test` (do not install dependencies or run commands in the agent sandbox).
 
 ## 4. Contributor Guidance
 
-- [x] 4.1 Update the README's expected visible result from `Welcome to Readet` to `Hello Egor`; verify the README's install, validation, and launch commands remain unchanged.
-- [ ] 4.2 Reviewer: From a clean checkout, follow the README through launching the app in Expo Go or an emulator and confirm it bundles without errors and visibly displays `Hello Egor`.
+- [x] 4.1 Update the README's expected visible result from `Welcome to Readet` to `Hello Egor!!!!!`; verify the README's install, validation, and launch commands remain unchanged.
+- [ ] 4.2 Reviewer: From a clean checkout, follow the README through launching the app in Expo Go or an emulator and confirm it bundles without errors and visibly displays `Hello Egor!!!!!`.

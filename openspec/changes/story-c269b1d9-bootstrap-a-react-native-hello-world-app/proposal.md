@@ -6,8 +6,8 @@ The repository now has a runnable application, but its initial visible message m
 
 ## What Changes
 
-- Replace the initial screen text `Welcome to Readet` with `Hello Egor`.
-- Update the automated screen-rendering test and README's expected visible result to use `Hello Egor`.
+- Replace the initial screen text `Welcome to Readet` with `Hello Egor!!!!!`.
+- Update the automated screen-rendering test and README's expected visible result to use `Hello Egor!!!!!`.
 
 ## Capabilities
 
@@ -24,4 +24,4 @@ Updates the application entry point, its rendering test, and contributor documen
 
 ## Assumptions
 
-- The initial screen will display the exact text "Hello Egor" and will not add any other product functionality.
+- The initial screen will display the exact text "Hello Egor!!!!!" and will not add any other product functionality.
