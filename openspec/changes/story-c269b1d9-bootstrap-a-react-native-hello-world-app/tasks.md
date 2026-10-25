@@ -6,5 +6,5 @@
 
 ## 2. Contributor Onboarding
 
-- [ ] 2.1 Replace the README with prerequisites and exact commands for dependency installation, type checking, linting, testing, and starting the Expo development server; verify it identifies `Welcome to Readet` as the expected visible result.
+- [x] 2.1 Replace the README with prerequisites and exact commands for dependency installation, type checking, linting, testing, and starting the Expo development server; verify it identifies `Welcome to Readet` as the expected visible result.
 - [ ] 2.2 Reviewer: From a clean checkout, run the README's install, typecheck, lint, test, and development-server commands, then open the app in Expo Go or an emulator and confirm it bundles without errors and visibly displays `Welcome to Readet`.
