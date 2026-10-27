@@ -18,7 +18,7 @@ async function getAvailablePort() {
 }
 
 test(
-	"the Next.js application serves an empty GET / page successfully",
+	"the Next.js application serves the expected GET / page successfully",
 	{ timeout: 90_000 },
 	async () => {
 		const port = await getAvailablePort();
@@ -73,15 +73,26 @@ test(
 				.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "")
 				.replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "")
 				.replace(/<!--[\s\S]*?-->/g, "");
-			const visibleText = renderedBody
-				.replace(/<[^>]*>/g, "")
-				.replace(/&(?:nbsp|#160);/gi, " ")
-				.trim();
-			assert.equal(visibleText, "", "GET / should not render user-facing text");
-			assert.doesNotMatch(
-				renderedBody,
-				/<(?:a|area|button|input|select|textarea|form|label|img|picture|source|svg|canvas|video|audio|object|embed|iframe)\b|\brole\s*=\s*["']?(?:link|img|button|checkbox|radio|switch|menu|menuitem|tab|tablist|combobox|listbox|option|slider|spinbutton|textbox|tree|treeitem)["']?|\bcontenteditable(?:\s|=|>)/i,
-				"GET / should not render links, controls, or images",
+			const heading = renderedBody.match(/<h1\b([^>]*)>([\s\S]*?)<\/h1\s*>/i);
+			assert.ok(heading, "GET / should render a level-one heading");
+			const headingClass = heading[1].match(/\bclass\s*=\s*(["'])(.*?)\1/i);
+			assert.ok(headingClass, "the level-one heading should have a class attribute");
+			assert.ok(
+				headingClass[2].split(/\s+/).includes("text-5xl"),
+				"the level-one heading should have the text-5xl class",
+			);
+			assert.equal(
+				heading[2].replace(/<[^>]*>/g, "").trim(),
+				"Hello world",
+				"the level-one heading should be labeled Hello world",
+			);
+
+			const button = renderedBody.match(/<button\b[^>]*>([\s\S]*?)<\/button\s*>/i);
+			assert.ok(button, "GET / should render a native button");
+			assert.equal(
+				button[1].replace(/<[^>]*>/g, "").trim(),
+				"click me",
+				"the native button should be labeled exactly click me",
 			);
 			assert.doesNotMatch(
 				html,
