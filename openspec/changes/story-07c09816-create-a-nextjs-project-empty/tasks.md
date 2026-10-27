@@ -5,4 +5,4 @@
 
 ## 2. Deliver the empty home page
 
-- [ ] 2.1 Implement the `/` page without user-facing text, links, controls, images, or starter/demo content, and add an automated route test that verifies the response is successful and contains none of that content.
+- [x] 2.1 Implement the `/` page without user-facing text, links, controls, images, or starter/demo content, and add an automated route test that verifies the response is successful and contains none of that content.

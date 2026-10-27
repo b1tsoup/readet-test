@@ -18,7 +18,7 @@ async function getAvailablePort() {
 }
 
 test(
-	"the Next.js application serves GET / successfully",
+	"the Next.js application serves an empty GET / page successfully",
 	{ timeout: 90_000 },
 	async () => {
 		const port = await getAvailablePort();
@@ -55,7 +55,6 @@ test(
 				try {
 					response = await fetch(url, { signal: AbortSignal.timeout(1_000) });
 					if (response.status === 200) {
-						await response.body?.cancel();
 						break;
 					}
 					await response.body?.cancel();
@@ -66,6 +65,29 @@ test(
 			}
 
 			assert.equal(response?.status, 200, `GET / did not succeed.\n${output}`);
+			const html = await response.text();
+			const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1];
+			assert.notEqual(body, undefined, "GET / should return an HTML body");
+
+			const renderedBody = body
+				.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "")
+				.replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "")
+				.replace(/<!--[\s\S]*?-->/g, "");
+			const visibleText = renderedBody
+				.replace(/<[^>]*>/g, "")
+				.replace(/&(?:nbsp|#160);/gi, " ")
+				.trim();
+			assert.equal(visibleText, "", "GET / should not render user-facing text");
+			assert.doesNotMatch(
+				renderedBody,
+				/<(?:a|area|button|input|select|textarea|form|label|img|picture|source|svg|canvas|video|audio|object|embed|iframe)\b|\brole\s*=\s*["']?(?:link|img|button|checkbox|radio|switch|menu|menuitem|tab|tablist|combobox|listbox|option|slider|spinbutton|textbox|tree|treeitem)["']?|\bcontenteditable(?:\s|=|>)/i,
+				"GET / should not render links, controls, or images",
+			);
+			assert.doesNotMatch(
+				html,
+				/\b(?:create next app|get started by editing|deploy now|read our docs|learn more|lorem ipsum)\b/i,
+				"GET / should not include starter or demo content",
+			);
 		} finally {
 			if (app.exitCode === null && app.signalCode === null) {
 				if (process.platform === "win32") {
