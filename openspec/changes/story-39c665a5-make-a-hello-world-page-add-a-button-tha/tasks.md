@@ -4,5 +4,5 @@
 
 ## 2. Build and verify the home page
 
-- [ ] 2.1 Replace the empty `/` page with the “Hello world” 5xl heading and shadcn “Click me” button; add or update an automated page test that verifies both labels, heading semantics/size, and button semantics, then run `npm test`.
+- [x] 2.1 Replace the empty `/` page with the “Hello world” 5xl heading and shadcn “Click me” button; add or update an automated page test that verifies both labels, heading semantics/size, and button semantics, then run `npm test`.
 - [ ] 2.2 Reviewer: Open `/` and confirm the heading appears at the requested 5xl size and the shadcn “Click me” button is clearly visible and usable.

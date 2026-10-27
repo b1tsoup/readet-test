@@ -18,7 +18,7 @@ async function getAvailablePort() {
 }
 
 test(
-	"the Next.js application serves an empty GET / page successfully",
+	"the Next.js application serves the expected GET / page",
 	{ timeout: 90_000 },
 	async () => {
 		const port = await getAvailablePort();
@@ -69,20 +69,29 @@ test(
 			const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1];
 			assert.notEqual(body, undefined, "GET / should return an HTML body");
 
-			const renderedBody = body
-				.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "")
-				.replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "")
-				.replace(/<!--[\s\S]*?-->/g, "");
-			const visibleText = renderedBody
-				.replace(/<[^>]*>/g, "")
-				.replace(/&(?:nbsp|#160);/gi, " ")
-				.trim();
-			assert.equal(visibleText, "", "GET / should not render user-facing text");
-			assert.doesNotMatch(
-				renderedBody,
-				/<(?:a|area|button|input|select|textarea|form|label|img|picture|source|svg|canvas|video|audio|object|embed|iframe)\b|\brole\s*=\s*["']?(?:link|img|button|checkbox|radio|switch|menu|menuitem|tab|tablist|combobox|listbox|option|slider|spinbutton|textbox|tree|treeitem)["']?|\bcontenteditable(?:\s|=|>)/i,
-				"GET / should not render links, controls, or images",
+			const heading = body.match(/<h1\b([^>]*)>([\s\S]*?)<\/h1\s*>/i);
+			assert.notEqual(heading, null, "GET / should render a semantic h1");
+			const className = heading[1].match(
+				/\bclass\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i,
 			);
+			assert.ok(
+				className?.slice(1).some((value) => value?.split(/\s+/).includes("text-5xl")),
+				"The h1 should include the text-5xl class",
+			);
+			const visibleText = (markup) =>
+				markup
+					.replace(/<[^>]*>/g, "")
+					.replace(/&(?:nbsp|#160);/gi, " ")
+					.trim();
+			assert.equal(
+				visibleText(heading[2]),
+				"Hello world",
+				"The h1 label should be exact",
+			);
+
+			const button = body.match(/<button\b[^>]*>([\s\S]*?)<\/button\s*>/i);
+			assert.notEqual(button, null, "GET / should render a semantic button");
+			assert.equal(visibleText(button[1]), "Click me", "The button label should be exact");
 			assert.doesNotMatch(
 				html,
 				/\b(?:create next app|get started by editing|deploy now|read our docs|learn more|lorem ipsum)\b/i,
