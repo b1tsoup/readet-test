@@ -6,7 +6,7 @@ The home page is currently empty, so visitors have no indication that the applic
 
 ## What Changes
 
-- Replace the empty home page with a prominent “Hello world” heading and a “Click me” button.
+- Replace the empty home page with a prominent “Hello world” heading and a “click me” button.
 - Make the heading use the requested 5xl text size.
 - Install and use shadcn/ui for the button.
 - Add automated coverage for the home page content and button.
@@ -20,7 +20,7 @@ The home page is currently empty, so visitors have no indication that the applic
 
 ## Assumptions
 
-- The heading text will be “Hello world” and the button label will be “Click me,” matching the story’s wording with conventional capitalization.
+- The heading text will be “Hello world”; the button label will be exactly “click me,” as specified in the story.
 - The button is a visible, operable button; no click outcome is specified by the story, so it does not need to trigger an additional action.
 - The 5xl heading size is a visual requirement and will be verified by a reviewer in addition to automated content checks.
 
