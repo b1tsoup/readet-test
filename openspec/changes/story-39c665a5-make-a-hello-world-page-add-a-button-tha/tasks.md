@@ -1,6 +1,6 @@
 ## 1. Set up shadcn/ui
 
-- [ ] 1.1 Configure shadcn/ui and the styling prerequisites for this Next.js app, and add the shadcn button component; verify the setup with an automated configuration/component test.
+- [x] 1.1 Configure shadcn/ui and the styling prerequisites for this Next.js app, and add the shadcn button component; verify the setup with an automated configuration/component test.
 
 ## 2. Build and verify the home page
 
