@@ -1,14 +1,31 @@
-# readet-test
+# Readet
 
-## Development
+## Prerequisites
 
-Install the project dependencies, then start the Next.js development server:
+- Node.js 20 or later
+- npm
+- Expo Go on a physical device, or an Android emulator or iOS Simulator
+
+## Install
 
 ```sh
 npm install
-npm run dev
 ```
 
-The app is available at <http://localhost:3000>.
+## Validate
 
-Run the automated tests with `npm test`.
+```sh
+npm run typecheck
+npm run lint
+npm test
+```
+
+## Start the Expo Development Server
+
+```sh
+npm start
+```
+
+Scan the QR code shown by Expo with Expo Go, or press `a` to open an Android emulator or `i` to open the iOS Simulator.
+
+The app should visibly display: `Welcome to Readet`.
